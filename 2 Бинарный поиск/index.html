@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--Написать программу оценки временных характеристик работы алгоритмов 
+неоптимального бинарного поиска, оптимального бинарного поиска и
+последовательного поиска в упорядоченном массиве.
+Массив из 300000%1000000 элементов задавать с помощью датчика 
+случайных чисел. В случае высокого быстродействия используемого 
+компьютера для снятия временных характеристик поиск следует осуществлять 
+многократно – 10000%300000 раз. Подобрать размер массива и, если требуется, 
+количество зацикливаний таким образом, чтобы минимальное время поиска 
+было не менее 100 тиков.
+На форме предусмотреть поле для ввода искомого ключа. Выводить для 
+каждого метода поиска результат поиска (индекс найденного элемента/поиск 
+неудачен), а также время поиска ключа.-->
+<html>
+    <head>
+        <title>Бинарный поиск</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="total">
+        <h1 class="title">Бинарный поиск</h1>
+        <span>Ключ</span>
+        <input type="number" id="arr-key" class="arr-key">
+        <div>
+        <h2 class="neopt-bin">Неоптимальный бинарный поиск</h2>
+        <span>Индекс</span>
+        <input type="text" class="neopt-bin-ind" id="neopt-bin-ind" readonly="readonly"><br>
+        <span>Время</span>
+        <input type="text" class="neopt-bin-time" id="neopt-bin-time" readonly="readonly">
+        </div>
+        <div>
+        <h2 class="opt-bin">Оптимальный бинарный поиск</h2>
+        <span>Индекс</span>
+        <input type="text" class="opt-bin-ind" id="opt-bin-ind" readonly="readonly"><br>
+        <span>Время</span>
+        <input type="text" class="opt-bin-time" id="opt-bin-time" readonly="readonly">
+        </div>
+        <div>
+        <h2 class="opt-posled">Последовательный поиск</h2>
+        <span>Индекс</span>
+        <input type="text" class="opt-posled-ind" id="opt-posled-ind" readonly="readonly"><br>
+        <span>Время</span>
+        <input type="text" class="opt-posled-time" id="opt-posled-time" readonly="readonly">
+        </div>
+        <button type="button" class="btn-find" id="btn-find" onclick="setValue()">Найти</button>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>

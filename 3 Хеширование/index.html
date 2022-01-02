@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Хеширование</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="total">
+        <h1 class="title">Хеширование</h1>
+        <div class="det">
+            <span>Количество итераций</span>
+            <input type="number" id="num_iter" class="num_iter">
+        </div>
+        
+        <h2 class="func_h2">Функции хеширования</h2>
+        <div class="methods">
+            <div class="detail">
+                <span>Метод деления</span>
+                <input type="text" class="func_del" id="func_del" readonly="readonly"><br/>
+            </div>
+            <div class="detail">
+                <span>Метод середины квадратов</span>
+                <input type="text" class="func_cer_kv" id="func_cer_kv" readonly="readonly"><br/>
+            </div>
+            <div class="detail">
+                <span>Метод свертывания</span>
+                <input type="text" class="func_sver" id="func_sver" readonly="readonly"><br/>
+            </div>
+            <div class="detail">
+                <span>Метод умножения</span>
+                <input type="text" class="func_umn" id="func_umn" readonly="readonly"><br/>
+            </div>
+        </div>
+        <button type="button" class="btn-find" id="btn-find" onclick="calculateMet()">Вычислить</button>
+        
+        <h2>Методы разрешения коллизий</h2>
+        <div class="method-razresheniya">
+            <div>
+            <h2>Метод открытой адресации</h2>
+            <span>Время поиска</span>
+            <input type="text" class="open_adress_time" id="open_adress_time" readonly="readonly"><br/>
+            <span>Среднее число сравнений</span>
+            <input type="text" class="open_ adress_sr" id="open_adress_sr" readonly="readonly"><br/>
+            <span>Количество ключей</span>
+            <input type="text" class="open_adress_k" id="open_adress_k" readonly="readonly"><br/>
+        </div>
+        <div>
+            <h2>Метод цепочек</h2>
+            <span>Время поиска</span>
+            <input type="text" class="cepoch_time" id="cepoch_time" readonly="readonly"><br/>
+            <span>Среднее число сравнений</span>
+            <input type="text" class="cepoch_mid_count" id="cepoch_mid_count" readonly="readonly"><br/>
+            <span>Количество ключей</span>
+            <input type="text" class="cepoch_key_count" id="cepoch_key_count" readonly="readonly"><br/>
+        </div>
+
+    </div>
+        <button type="button" class="btn-compare" id="btn-compare" onclick="compareMet()">Сравнить</button>
+        </div>
+        
+        <script src="main2.js"></script>
+    </body>
+</html>

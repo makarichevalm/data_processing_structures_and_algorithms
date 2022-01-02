@@ -1,0 +1,66 @@
+/*
+*/
+body {
+padding: 0;
+margin: 0;
+background: #cc95c0;
+background: -webkit-linear-gradient(to right, #7aa1d2, #dbd4b4, #cc95c0);
+background: linear-gradient(to right, #7aa1d2, #dbd4b4, #cc95c0);
+}
+
+.second-title {
+font-family: "Sahitya", serif;
+font-size: 20px;
+color: rgb(57, 57, 100);
+}
+
+.title {
+text-align: center;
+font-family: "Slabo 27px", serif;
+color: #264a79;
+}
+
+.total {
+display: flex;
+justify-content: space-around;
+}
+
+.total-neup-up {
+width: 400px;
+padding: 15px;
+background: rgba(255, 255, 255, 0.5);
+box-shadow: 0 8px 32px 0 rgba(39, 44, 109, 0.37);
+backdrop-filter: blur(75px);
+-webkit-backdrop-filter: blur(3px);
+border-radius: 10px;
+border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+input {
+width: 250px;
+height: 30px;
+border: groove;
+outline-offset: 5px;
+margin-bottom: 20px;
+outline-color: rgb(126, 92, 238);
+}
+
+[placeholder] {
+text-align: center;
+font-size: 30px;
+color: darkred;
+}
+
+button {
+width: 130px;
+height: 50px;
+border: none;
+background: #402e69;
+background: -webkit-linear-gradient(to right, #a979eb, #7e6fa0);
+background: linear-gradient(to right, #c2b5d6, #bfabec);
+box-shadow: 0 8px 32px 0 rgba(39, 44, 109, 0.37);
+backdrop-filter: blur(75px);
+-webkit-backdrop-filter: blur(3px);
+border-radius: 10px;
+font-family: "Sahitya", serif;
+}

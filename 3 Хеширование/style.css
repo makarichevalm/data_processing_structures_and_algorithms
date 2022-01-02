@@ -1,0 +1,99 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #cc95c0;
+    background: -webkit-linear-gradient(to right, #7aa1d2, #dbd4b4, #cc95c0);
+    background: linear-gradient(to right, #7aa1d2, #dbd4b4, #cc95c0);
+    line-height: 1px;
+}
+input {
+    width: 200px;
+    height: 20px;
+    border: groove;
+    outline-offset: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    outline-color: rgb(126, 92, 238);
+}
+/* .detail{
+
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+} */
+button {
+    width: 120px;
+    height: 35px;
+    border: none;
+    background: #402e69;
+    background: -webkit-linear-gradient(to right, #a979eb, #7e6fa0);
+    background: linear-gradient(to right, #c2b5d6, #bfabec);
+    font-family: "Sahitya", serif;
+    border-radius: 10px;
+    color:rgb(37, 37, 78);
+    font-size: 18px;
+}
+button:hover{
+    box-shadow: 5px 5px 5px rgba(39, 44, 109, 0.37);
+}
+h2 {
+    font-family: "Sahitya", serif;
+    font-size: 18px;
+    color: rgb(57, 57, 100);
+}
+.title {
+    text-align: center;
+    color: #264a79;
+    font-size: 20px;
+}
+.total{
+    width: 600px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(39, 44, 109, 0.26);
+    backdrop-filter: blur(75px);
+    -webkit-backdrop-filter: blur(73px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+   
+}
+.methods{
+    padding: 5px;
+    
+}
+/*.detail{
+    display: inline-block;
+    vertical-align:middle;
+}
+.det{
+    width: 45%;
+    text-align: left;
+}*/
+.method-razresheniya{
+    display: flex;
+}
+.methods{
+    display: flex;
+    flex-direction: column;
+    
+}
+.detail{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.detail span{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 300px;
+    padding-top: 20px;
+}
+.detail input{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}

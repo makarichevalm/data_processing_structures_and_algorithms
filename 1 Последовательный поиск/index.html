@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Последовательный поиск</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+        <h1 class="title">Последовательный поиск</h1>
+        <div class="total">
+        <div class="neup total-neup-up">
+        <h2 class="second-title">Неупорядоченный массив </h2>
+        <span>Ключ</span>
+        <input type="number" class="arr-key1">
+        <div>
+        <h2 class="second-title">Неоптимальный поиск (А)</h2>
+        <span>Время</span>
+        <input type="text" class="neup-neopt-time" readonly="readonly"><br>
+        <span>Индекс</span>
+        <input type="text" class="neup-neopt-ind" readonly="readonly">
+        </div>
+        <div>
+        <h2 class="second-title">Oптимальный поиск (B)</h2>
+        <span>Время</span>
+        <input type="text" class="neup-opt-time" readonly="readonly"><br>
+        <span>Индекс</span>
+        <input type="text" class="neup-opt-ind" readonly="readonly">
+        
+        </div>
+        <button type="button" class="btn-find">Найти</button>
+        </div>
+        <div class="up total-neup-up">
+        <h2 class="second-title">Упорядоченный массив</h2>
+        <span>Ключ</span>
+        <input type="number" class="arr-key2">
+        <div>
+        <h2 class="second-title">Поиск в неупорядоченном массиве (B)</h2>
+        <span>Время</span>
+        <input type="text" class="up-neopt-time" readonly="readonly"><br>
+        <span>Индекс</span>
+        <input type="text" class="up-neopt-ind" readonly="readonly">
+        
+        </div>
+        <div>
+        <h2 class="second-title">Поиск в упорядоченном массиве (С)</h2>
+        <span>Время</span>
+        <input type="text" class="up-opt-time" readonly="readonly"><br>
+        <span>Индекс</span>
+        <input type="text" class="up-opt-ind" readonly="readonly">
+        
+        </div>
+        <button type="button" class="btn-find2">Найти</button>
+        </div>
+        </div>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>
