@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Внутренняя сортировка</title>
+</head>
+<body>
+    <ul>
+        <li><a href="index.html">Характеристики сортировок</a></li>
+        <li><a href="bubble_sort.html">Прямой обмен</a></li>
+        <li><a href="selection_sort.html">Прямой выбор</a></li>
+        <li><a href="insertion_sort.html">Прямое включение</a></li>
+        <li><a href="shell_sort.html">Сортировка Шелла</a></li>
+        <li><a href="counting_sort.html">Линейная сортировка</a></li>
+    </ul>
+    <h1>Сортировка Шелла</h1>
+    <div class="all">
+        <div class="lab_mass">Исходный массив:
+            <div class="mass" id="shell_mass"></div>
+        </div>
+        <div class="lab_res">Промежуточные результаты:
+            <div class="results" id="shell_results"></div>
+        </div>
+        <div class="but">
+            <button class="button" id="shell_but" onclick="sort()">Сортировать</button>
+        </div>
+    </div>
+    <script src="shell_sort.js"></script>
+</body>
+</html>
