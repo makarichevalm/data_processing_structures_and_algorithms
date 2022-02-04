@@ -1,3 +1,4 @@
+//Прямой выбор
 let res = document.getElementById('insert_results');
 let mass = document.getElementById('insert_mass');
 let size = 10;
