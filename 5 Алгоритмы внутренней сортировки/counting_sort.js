@@ -1,5 +1,6 @@
 let res = document.getElementById('line_results');
 let mass = document.getElementById('line_mass');
+let dop_mass = document.getElementById('line_dop');
 let arr = [];
 let dop = [];
 let size = 10;
@@ -7,14 +8,20 @@ function sort() {
     for (let i = 0; i < size; i++) {
         arr[i] = Math.floor(Math.random() * 10);
     }
-    console.log(arr);
-    res.innerHTML = '';
-    mass.innerHTML = '';
     console.log('arr', arr);
+    mass.rows[0].cells.innerText = '';
+    dop_mass.rows[0].cells.innerText = '';
+    res.rows[0].cells.innerText = '';
     for (let i = 0; i < size; i++) {
-        mass.innerHTML += arr[i] + '  ';
+        mass.rows[0].cells[i].innerText = arr[i];
     }
     countingSort();
+    for (let i = 0; i < size; i++) {
+        res.rows[0].cells[i].innerText = arr[i];
+    }
+    for (let i = 0; i < size; i++) {
+        dop_mass.rows[0].cells[i].innerText = dop[i];
+    }
 }
 function countingSort() {
     for (let i = 0; i < size; i++) {
@@ -33,9 +40,5 @@ function countingSort() {
             t++;
         }
         console.log(arr);
-        for (let k = 0; k < size; k++) {
-            res.innerHTML += arr[k] + '    ';
-        }
-        res.innerHTML += '<br>';
     }
 }

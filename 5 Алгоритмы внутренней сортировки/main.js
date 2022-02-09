@@ -15,10 +15,12 @@ let ShellNumComps = document.getElementById('comp_shell');
 let ShellNumSwaps = document.getElementById('swap_shell');
 
 let CountTime = document.getElementById('time_count');
-let CountNumComps = document.getElementById('comp_count');
-let CountNumSwaps = document.getElementById('swap_count');
+//let CountNumComps = document.getElementById('comp_count');
+//let CountNumSwaps = document.getElementById('swap_count');
 
 let arr = [];
+let dop = [];
+let arrCount = [];
 function perform() {
     let size = document.getElementById('num_arr').value;
     console.log(size);
@@ -29,6 +31,11 @@ function perform() {
     for (let i = 0; i < size; i++) {
         arr[i] = Math.floor(Math.random() * (100 - 10)) + 10;
     }
+    for (let i = 0; i < size; i++) {
+        arrCount[i] = Math.floor(Math.random() * size);
+    }
+    console.log(arrCount);
+    console.log(arr);
     let resBub = bubbleSort(arr, size);
     BubbleNumComps.value = resBub[0];
     BubbleNumSwaps.value = resBub[1];
@@ -40,11 +47,22 @@ function perform() {
     InsertNumSwaps.value = resIns[1];
     InsertTime.value = resIns[2];
     console.log(resIns);
+
     let resSel = selectionSort(arr, size);
     SelectNumComps.value = resSel[0];
     SelectNumSwaps.value = resSel[1];
     SelectTime.value = resSel[2];
     console.log(resSel);
+
+    let resShell = shellSort(arr, size);
+    ShellNumComps.value = resShell[0];
+    ShellNumSwaps.value = resShell[1];
+    ShellTime.value = resShell[2];
+    console.log(resShell);
+
+    let resCount = countingSort(size, arrCount);
+    CountTime.value = resCount;
+    console.log(resCount);
 }
 /** 
  *Число сравнений: минимальное – (n-1), максимальное – n^2/2.
@@ -62,6 +80,7 @@ function bubbleSort(arr, size) {
     let kp = 0; // перестановки
     let ks = 0; //сравнения
     for (let i = 0; i < size; i++) {
+        let flag = true;
         for (let j = 0; j < size - i - 1; j++) {
             //size-i-1: -1 т.к. возможен выход за границу массива при j+1=10 [0...9]
             ks++; //сравнения
@@ -70,7 +89,11 @@ function bubbleSort(arr, size) {
                 let t = arrSort[j];
                 arrSort[j] = arrSort[j + 1];
                 arrSort[j + 1] = t;
+                flag = false;
             }
+        }
+        if (flag) {
+            break;
         }
     }
     let time = performance.now() - start;
@@ -89,20 +112,17 @@ function insertionSort(arr, size) {
     let start = performance.now();
     let kp = 0;
     let ks = 0;
-    for (let i = 2; i < size; i++) {
-        //в условии i=1
-
+    for (let i = 1; i < size; i++) {
         let t = arrSort[i];
         let j = i - 1;
-        ks++;
-        while (j > 0 && t < arrSort[j]) {
-            //в условии j>=0
+
+        while (j >= 0 && t < arrSort[j]) {
+            ks++;
             arrSort[j + 1] = arrSort[j];
-            kp++;
             j--;
         }
         arrSort[j + 1] = t;
-
+        kp++;
         //console.log(arrSort);
     }
     let time = performance.now() - start;
@@ -111,14 +131,13 @@ function insertionSort(arr, size) {
 
 function selectionSort(arr, size) {
     let arrSort = [...arr];
-    let start = performance.now();
+    const start = performance.now();
     let kp = 0;
     let ks = 0;
     for (let k = size - 1; k > 0; k--) {
         // в массиве больше 1 неотсортированного элемента
         let max = 0;
         for (let j = 0; j <= k; j++) {
-            //j<=k если убрать = то элемент??
             ks++;
             if (arrSort[j] > arrSort[max]) {
                 max = j;
@@ -131,6 +150,59 @@ function selectionSort(arr, size) {
         kp++;
         //console.log(arrSort);
     }
+    const end = performance.now();
+    let time = end - start;
+    console.log(arrSort);
+    return [ks, kp, time];
+}
+
+function shellSort(arr, size) {
+    let arrSort = [...arr];
+    let start = performance.now();
+    let kp = 0;
+    let ks = 0;
+    let h = Math.floor(size / 2);
+
+    while (h >= 1) {
+        for (let i = h; i < size; i++) {
+            let cur = arrSort[i];
+            let j = i;
+
+            while (j > 0 && cur < arrSort[j - h]) {
+                ks++;
+                arrSort[j] = arrSort[j - h];
+                j -= h;
+            }
+            arrSort[j] = cur;
+            kp++;
+        }
+        h = Math.floor(h / 2);
+        //console.log(arrSort);
+    }
     let time = performance.now() - start;
     return [ks, kp, time];
+}
+
+function countingSort(size, arrCount) {
+    arrSort = [...arrCount];
+    let start = performance.now();
+    for (let i = 0; i < size; i++) {
+        dop[i] = 0;
+    }
+    for (let i = 0; i < size; i++) {
+        dop[arrSort[i]] += 1;
+    }
+    //console.log('dop', dop);
+    let t = 0; //перемещение по arrSort
+    for (let i = 0; i < size; i++) {
+        //цикл для прохода по dop
+        for (let j = dop[i]; j > 0; j--) {
+            //цикл для уменьшения значения dop
+            arrSort[t] = i;
+            t++;
+        }
+        //console.log(arrSort);
+    }
+    let time = performance.now() - start;
+    return time;
 }

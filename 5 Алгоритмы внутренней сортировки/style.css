@@ -66,12 +66,17 @@ h2{
     text-align: center;
     /*margin: 10px;*/
 }
-.mass{
+/*.mass{
     margin: 10px;
+    width: 600px;
+    
+
 }
-.results{
+/*.results{
     margin: 10px;
-}
+    width: 680px;
+
+}*/
 .all_sort{
     display: flex;
     flex-direction: column;
@@ -100,4 +105,36 @@ input{
     margin-left: 10px;
     margin-right: 10px;
     text-align: center;
+}
+td{
+    border: 1px solid;
+    height: 25px;
+    width: 60px;
+}
+.head1{
+    border: 0;
+    width: 90px;
+}
+table{
+    width: 690px;
+    margin: 10px;
+    
+}
+#shell_mass{
+    width: 890px;
+}
+#shell_results{
+    width: 890px;
+}
+#shell_results  .head1{
+    width:90px;
+}
+#shell_results td{
+    width: 40px;
+}
+#shell_mass td{
+    width: 40px;
+}
+#shell_mass  .head1{
+    width:90px;
 }
