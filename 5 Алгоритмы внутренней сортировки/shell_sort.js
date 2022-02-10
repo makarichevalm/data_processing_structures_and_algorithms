@@ -8,8 +8,8 @@ function sort() {
     }
     console.log('arr', arr);
     mass.rows[0].cells.innerText = '';
-    for (let k = 0; k < 4; k++) {
-        for (let i = 0; i <= 4; i++) {
+    for (let k = 0; k < 3; k++) {
+        for (let i = 0; i <= 3; i++) {
             res.rows[k].cells[i].innerText = '';
         }
     }
@@ -17,31 +17,20 @@ function sort() {
         mass.rows[0].cells[i + 1].innerText = arr[i];
     }
     shellSort();
-    //shellSort1();
 }
-/*function shellSort1() {
-    let t = Math.floor(Math.log2(100)) - 1;
-    console.log(t);
-    let h = [];
-    h[0] = 1;
 
-    for (let i = 0; i < t - 1; i++) {
-        h[i + 1] = h[i] * 2 + 1;
-    }
-    console.log(h);
-}*/
-/*function shellSort() {
+function shellSort() {
     let i = 0;
     let t = Math.floor(Math.log2(size)) - 1;
     console.log(t);
     let h = [];
-    h[0] = 1;
+    h[t - 1] = 1; //7 3 1
 
-    for (let i = 0; i < t - 1; i++) {
-        h[i + 1] = h[i] * 2 + 1;
+    for (let i = t - 1; i > 0; i--) {
+        h[i - 1] = h[i] * 2 + 1;
     }
     console.log(h);
-    for (let m = h.size - 1; m > 0; m--) {
+    for (let m = 0; m < t; m++) {
         console.log(h[m]);
         for (let i = h[m]; i < size; i++) {
             let cur = arr[i];
@@ -59,8 +48,9 @@ function sort() {
         }
         i++;
     }
-}*/
-function shellSort() {
+}
+
+/*function shellSort() {
     let i = 0; // счетчик для заполнения таблицы
     let h = Math.floor(size / 2);
 
@@ -83,3 +73,15 @@ function shellSort() {
         i++;
     }
 }
+*/
+/*function shellSort1() {
+    let t = Math.floor(Math.log2(100)) - 1;
+    console.log(t);
+    let h = [];
+    h[0] = 1;
+
+    for (let i = 0; i < t - 1; i++) {
+        h[i + 1] = h[i] * 2 + 1;
+    }
+    console.log(h);
+}*/

@@ -32,8 +32,13 @@ function bubbleSort() {
             }
         }
         if (flag) {
+            for (let k = 0; k < size; k++) {
+                res.rows[i].cells[0].innerText = 'Проход ' + (i + 1);
+                res.rows[i].cells[k + 1].innerText = arr[k];
+            }
             break;
         }
+
         console.log('j= ', i, 'arr ', arr);
         for (let k = 0; k < size; k++) {
             res.rows[i].cells[0].innerText = 'Проход ' + (i + 1);

@@ -6,7 +6,7 @@ let dop = [];
 let size = 10;
 function sort() {
     for (let i = 0; i < size; i++) {
-        arr[i] = Math.floor(Math.random() * 10);
+        arr[i] = Math.floor(Math.random() * size);
     }
     console.log('arr', arr);
     mass.rows[0].cells.innerText = '';
