@@ -180,10 +180,11 @@ function shellSort(arr, size) {
         for (let i = h[m]; i < size; i++) {
             let cur = arrSort[i];
             let j = i;
-            while (j > 0 && cur < arrSort[j - h[m]]) {
-                ks++;
+            while (j >= h[m] && cur < arrSort[j - h[m]]) {
+                //ks = ks + 2;
                 arrSort[j] = arrSort[j - h[m]];
                 j -= h[m];
+                ks++;
             }
             arrSort[j] = cur;
             kp++;
