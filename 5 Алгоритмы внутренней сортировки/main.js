@@ -159,15 +159,19 @@ function selectionSort(arr, size) {
     console.log(arrSort);
     return [ks, kp, time];
 }
+
 // сложность O(n·log n)
 function shellSort(arr, size) {
     let arrSort = [...arr];
+    //let a = [...arr];
     let kp = 0;
     let ks = 0;
-    let start = performance.now();
-    let t = Math.floor(Math.log2(size)) - 1;
-    //console.log(t);
+    //let k, s, x, m;
+    let m, cur, j, i;
     let h = [];
+    let t = Math.floor(Math.log2(size)) - 1;
+    let start = performance.now();
+    //console.log(t);
     h[t - 1] = 1; //7 3 1
 
     for (let i = t - 1; i > 0; i--) {
@@ -175,12 +179,14 @@ function shellSort(arr, size) {
     }
     //console.log(h);
 
-    for (let m = 0; m < t; m++) {
+    for (m = 0; m < t; m++) {
         //console.log(h[m]);
-        for (let i = h[m]; i < size; i++) {
-            let cur = arrSort[i];
-            let j = i;
+        for (i = h[m]; i < size; i++) {
+            cur = arrSort[i];
+            j = i;
+            ks++;
             while (j >= h[m] && cur < arrSort[j - h[m]]) {
+                //
                 //ks = ks + 2;
                 arrSort[j] = arrSort[j - h[m]];
                 j -= h[m];

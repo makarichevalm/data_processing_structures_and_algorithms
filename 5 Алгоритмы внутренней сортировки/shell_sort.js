@@ -30,12 +30,13 @@ function shellSort() {
         h[i - 1] = h[i] * 2 + 1;
     }
     console.log(h);
+
     for (let m = 0; m < t; m++) {
         console.log(h[m]);
         for (let i = h[m]; i < size; i++) {
             let cur = arr[i];
             let j = i;
-            while (j > 0 && cur < arr[j - h[m]]) {
+            while (j >= h[m] && cur < arr[j - h[m]]) {
                 arr[j] = arr[j - h[m]];
                 j -= h[m];
             }
@@ -49,39 +50,3 @@ function shellSort() {
         i++;
     }
 }
-
-/*function shellSort() {
-    let i = 0; // счетчик для заполнения таблицы
-    let h = Math.floor(size / 2);
-
-    while (h >= 1) {
-        for (let i = h; i < size; i++) {
-            let cur = arr[i];
-            let j = i;
-            while (j > 0 && cur < arr[j - h]) {
-                arr[j] = arr[j - h];
-                j -= h;
-            }
-            arr[j] = cur;
-        }
-        h = Math.floor(h / 2);
-        console.log(arr);
-        for (let k = 0; k < size; k++) {
-            res.rows[i].cells[0].innerText = 'Проход ' + (i + 1);
-            res.rows[i].cells[k + 1].innerText = arr[k];
-        }
-        i++;
-    }
-}
-*/
-/*function shellSort1() {
-    let t = Math.floor(Math.log2(100)) - 1;
-    console.log(t);
-    let h = [];
-    h[0] = 1;
-
-    for (let i = 0; i < t - 1; i++) {
-        h[i + 1] = h[i] * 2 + 1;
-    }
-    console.log(h);
-}*/
